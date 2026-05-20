@@ -17,8 +17,10 @@ Route::middleware('auth')->group(function () {
 
     //student management
     Route::get('students', [\App\Http\Controllers\studentmngtController::class, 'index'])->name('student.index');
-    route::get('students/create', [\App\Http\Controllers\studentmngtController::class, 'create'])->name('student.create');
+    Route::get('students/create', [\App\Http\Controllers\studentmngtController::class, 'create'])->name('student.create');
+    Route::post('students', [\App\Http\Controllers\studentmngtController::class, 'store'])->name('student.store');
 
     Route::get('profile', [\App\Http\Controllers\ProfileController::class, 'show'])->name('profile.show');
     Route::put('profile', [\App\Http\Controllers\ProfileController::class, 'update'])->name('profile.update');
+
 });

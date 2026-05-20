@@ -27,15 +27,31 @@
 
                             <table class="table">
                                 <thead>
-                                </thead>
-                                <tbody>
+                                    
                                  {{-- @foreach($student) --}}
+                                        <tr>
+                                            <th> First Name </th>
+                                            <th> Middle Name </th>
+                                            <th> Last Name </th>
+                                            <th> Address </th>
+                                            <th> Date of Birth </th>
+                                        </tr>
+                                </thead>
+
+                                <tbody>
+                                        @foreach ($students as $student)
                                     <tr>
-                                        <td>Matthew Bartolomeo</td>
-                                        <td>matthewbartolomeo@sample.com</td>
+                                        <td> {{ $student->fname }} </td>
+                                        <td> {{ $student->mname }} </td>
+                                        <td> {{ $student->lname }} </td>
+                                        <td> {{ $student->add }} </td>
+                                        <td> {{ $student->dobirth }} </td>
                                     </tr>
-                                {{-- @endforeach --}}
-                                </tbody>
+
+                                    
+                                </tbody>                               
+                                        @endforeach
+                                
                             </table>
                         </div>
                         <!-- /.card-body -->
@@ -43,7 +59,17 @@
 
                 </div>
             </div>
+
+                <div class="container-fluid">
+                    <a href="{{ route('student.create') }}" class="btn btn-info">Add New Student</a>
+                    <div class="row"></div>
+
+                    <div class="card-footer">
+                    
+                </div>
+
             <!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
+    <!-- /.content -->
 @endsection

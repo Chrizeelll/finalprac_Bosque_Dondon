@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 
 class studentmngt extends Model
 {
@@ -14,6 +16,6 @@ class studentmngt extends Model
         'lname',
         'mname',
         'add',
-        'dobirth',
-    ]
+        'dobirth'
+    ];
 }
