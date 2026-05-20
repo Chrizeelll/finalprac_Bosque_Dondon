@@ -56,10 +56,10 @@
                         @error('add') <span class="text-danger">{{$message}}</span> @enderror
 
                         <div class="form-group col-12">
-                          <label for="dob">Date of Birth</label>
-                          <input type="date" class="form-control" id="dobirth" name="dob" required>
+                          <label for="dobirth">Date of Birth</label>
+                          <input type="date" class="form-control" id="dobirth" name="dobirth" required>
                         </div>
-                        @error('dob') <span class="text-danger">{{$message}}</span> @enderror
+                        @error('dobirth') <span class="text-danger">{{$message}}</span> @enderror
               
                 </div>
                 <!-- /.card-body -->

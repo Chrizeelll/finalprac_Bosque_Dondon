@@ -27,8 +27,7 @@
 
                             <table class="table">
                                 <thead>
-                                    
-                                 {{-- @foreach($student) --}}
+                                
                                         <tr>
                                             <th> First Name </th>
                                             <th> Middle Name </th>
