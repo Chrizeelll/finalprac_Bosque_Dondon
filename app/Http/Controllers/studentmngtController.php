@@ -32,4 +32,33 @@ class studentmngtController extends Controller
             ->route('student.index')
             ->with('status', 'Student created successfully!');
     }
+
+     public function edit(int $id)
+    {
+        $student = studentmngt::findOrFail($id);
+        return view('student.edit', compact('student'));
+    }
+    public function update (Request $request, int $id)
+    {
+        $validated = $request->validate([
+          'fname' => ['required', 'string', 'max:255'],
+            'mname' => ['required', 'string', 'max:255'],
+            'lname' => ['required', 'string', 'max:255'],
+            'add' => ['required', 'string', 'max:255'],
+            'dobirth' => ['required', 'string', 'max:20'], 
+        ]);
+
+        $student = studentmngt::findOrFail($id);
+        $student->update($validated);
+
+        return redirect()->back()->with('status', 'student updated successfully');
+    }
+
+    public function destroy(int $id)
+    {
+        $student = studentmngt::findOrFail($id);
+        $student->delete();
+
+        return redirect()->back()->with('status', 'student Deleted');
+    }
 }
